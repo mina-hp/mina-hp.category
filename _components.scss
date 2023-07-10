@@ -1,0 +1,105 @@
+.menu {
+  width: 100%;
+  padding: 60px 0;
+  & > h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(248, 116, 8, 0.9);
+  }
+  .button-container {
+    width: 100%;
+    padding: $spacing * 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing * 2;
+    flex-wrap: wrap;
+  }
+
+  .menu-list {
+    width: 100%;
+    padding: 0 $spacing * 16;
+    margin: $spacing * 4 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $spacing * 8;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media screen and (max-width: 425px) {
+      padding: 0 1rem;
+    }
+
+    .food-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: calc(250px - 1rem) calc(100% - 250px);
+      grid-gap: $spacing * 4;
+
+      @media screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      & > img {
+        object-fit: cover;
+        border: 2px solid $primary_color;
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        box-shadow: 1px 1px 11px 6px rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: 1px 1px 11px 6px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 1px 1px 11px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .food-detail {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: $spacing * 2;
+        padding-top: $spacing * 2;
+        margin-bottom: $spacing * 4;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-bottom: 1px solid $text_secondary;
+        border-top: 1px solid $text_secondary;
+        .price {
+          color: $primary_color;
+        }
+      }
+      .food-more {
+        color: $text_secondary;
+        line-height: 1.5;
+        padding-bottom: 50px;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: $spacing $spacing * 4;
+  text-transform: capitalize;
+  border-radius: $radius;
+  border-color: $primary_color;
+  background-color: transparent;
+  font-size: 1.1rem;
+  color: $primary_color;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary_color;
+    color: $background;
+    scale: 1.1;
+  }
+  @media screen and (max-width: 768px) {
+    flex-grow: 1;
+  }
+}
+.active-btn {
+  background-color: $primary_color;
+  color: $background;
+}
